@@ -2,7 +2,7 @@
   "name": "tulga_the_bot",
   "version": "1.0.0",
   "description": "ICC javascript team's onboarding bot",
-  "main": "web/server-web.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
