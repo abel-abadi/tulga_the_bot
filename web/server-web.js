@@ -14,6 +14,7 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
+//app.get('/', (req, res) => { res.send('\n 👋 🌍 \n') })
 
 /** Routes */
 app.get('/', (req, res) => {
@@ -24,6 +25,12 @@ app.get('/', (req, res) => {
     })
     ;
 });
+
+app.post('/commands/tulga_the_bot', (req, res) => {
+    let payload = req.body
+  
+    console.log(payload)
+  })
 
 /** Static Files */
 app.use('/', express.static(__dirname + '/public'));
