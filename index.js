@@ -5,6 +5,10 @@ const {updateUsers, getUsernameFromId} = require('./src/users');
 const {updateChannels, getChannelFromId, updateIMs, getIMfromUID} = require('./src/channels');
 
 
+if (process.env.NODE_ENV === 'development') { // eslint-disable-line no-undef
+    require('dotenv').config();
+}
+
 function giveHelp(command, message) {
     switch (command) {
         case 'hello:': {
