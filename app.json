@@ -11,7 +11,7 @@
     ],
     "success_url": "/",
     "env": {
-      "BOT_KEY": {
+      "SLACK_BOT_TOKEN": {
         "description": "A secret key for verifying the integrity of signed cookies."
       }
     }

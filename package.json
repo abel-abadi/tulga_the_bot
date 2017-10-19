@@ -4,6 +4,7 @@
   "description": "ICC javascript team's onboarding bot",
   "main": "index.js",
   "scripts": {
+    "start": "NODE_ENV=development node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
