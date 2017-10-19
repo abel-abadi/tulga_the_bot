@@ -10,5 +10,5 @@ const botToken = process.env.SLACK_BOT_TOKEN || ''; // eslint-disable-line no-un
 
 const rtm = new RtmClient(botToken);
 const web = new WebClient(botToken);
-
+console.log('token ->'+process.env.SLACK_BOT_TOKEN)
 module.exports = {rtm, web, RTM_EVENTS};

@@ -1,5 +1,5 @@
 const {rtm, web, RTM_EVENTS} = require('./src/bot');
-const {commands,getRandomResponse} = require('./src/commands');
+const {commands} = require('./src/commands');
 const { keyWords,responses} = require('./src/keywords');
 const {updateUsers, getUsernameFromId} = require('./src/users');
 const {updateChannels, getChannelFromId, updateIMs, getIMfromUID} = require('./src/channels');
@@ -106,6 +106,18 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             }
         }
     }
+});
+
+rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, (rtmStartData) => {
+    for (const c of rtmStartData.channels) {
+        if (c.is_member && c.name ==='general') { channel = c.id }
+    }
+    console.log(`Logged in as ${rtmStartData.self.name} of team ${rtmStartData.team.name}, but not yet connected to a channel`);
+  });
+  
+  // you need to wait for the client to fully connect before you can send messages
+rtm.on(CLIENT_EVENTS.RTM.RTM_CONNECTION_OPENED, function () {
+    rtm.sendMessage("Still trying....!", channel);
 });
 
 web.users.list((err, data) => {
