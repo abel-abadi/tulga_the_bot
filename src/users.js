@@ -12,9 +12,6 @@ function getIdFromUsername(username) {
 
 function updateUsers(data) {
     users = data.members;
-    users.map(member => {
-        swearJar[member.name] = 0;
-    });
 }
 
 function listUsers() {

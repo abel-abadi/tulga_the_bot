@@ -1,4 +1,4 @@
-const commands = ['help:', 'hello:','kill:', 'punish:', 'reward:', 'onboard:','profile:'];
+const commands = ['help', 'hi','hello','onboard','profile'];
 
 module.exports = {
     commands

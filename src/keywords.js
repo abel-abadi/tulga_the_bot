@@ -1,4 +1,4 @@
-const keyWords = ['speak', 'kill', 'reward', 'praise', 'hey', 'hello', 'fuck you','onboard','profile'];
+const keyWords = ['speak', 'kill', 'reward', 'praise','fuck you'];
 
 const responses = {
     'kill': [

@@ -1,6 +1,6 @@
 const {rtm, web, RTM_EVENTS} = require('./src/bot');
 const {commands} = require('./src/commands');
-const { keyWords,responses} = require('./src/keywords');
+const {keyWords,responses} = require('./src/keywords');
 const {updateUsers, getUsernameFromId} = require('./src/users');
 const {updateChannels, getChannelFromId, updateIMs, getIMfromUID} = require('./src/channels');
 
