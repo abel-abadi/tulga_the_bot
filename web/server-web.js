@@ -66,10 +66,20 @@ rtm.on(RTM_EVENTS.MESSAGE , function handleRtmMessage(message) {
 
                 }else if(splittedMsg.length == 2){ //@tulga_the_bot command
 
-                    const mention = splittedMsg[0];
-                    const cmd = splittedMsg[1];
+                    let mention = '';
+                    let cmd = '';
 
-                    if(mention === botName.toLowerCase()){ // if mentioned and has a command with colon
+                    if(splittedMsg[0] === botName.toLowerCase()){
+                        mention = splittedMsg[0];
+                        cmd = splittedMsg[1];
+                    }
+
+                    if(splittedMsg[1] === botName.toLowerCase()){
+                        mention = splittedMsg[1];
+                        cmd = splittedMsg[0];
+                    }
+                    
+                    if(mention && mention === botName.toLowerCase()){ // if mentioned and has a command with colon
                         let cmdFound = false;
                         console.log('bot mentioned');
                         commands.forEach(command => {
