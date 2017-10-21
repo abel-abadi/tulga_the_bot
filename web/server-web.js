@@ -70,16 +70,20 @@ rtm.on(RTM_EVENTS.MESSAGE , function handleRtmMessage(message) {
                     const cmd = splittedMsg[1];
 
                     if(mention === botName.toLowerCase()){ // if mentioned and has a command with colon
+                        const cmdFound = false;
                         console.log('bot mentioned');
                         commands.forEach(command => {
                             if (cmd.indexOf(command) > -1) {
+                                cmdFound = true;
                                 console.log('command found ' + command);
                                 giveResponse(command,message)
                             }
                         });
-                        const res = 'Hey <@'+ message.user +'>, Do you speak Javascript? I am native Javascript speaker. \n '
+                        if(!cmdFound){
+                            const res = 'Hey <@'+ message.user +'>, Do you speak Javascript? I am native Javascript speaker. \n '
                             +'If you do, please teach me this weird language of yours. :smile:';
                             rtm.sendMessage(res, message.channel);
+                        }    
                     }
                 }
         }
