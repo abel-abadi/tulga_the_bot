@@ -70,7 +70,7 @@ rtm.on(RTM_EVENTS.MESSAGE , function handleRtmMessage(message) {
                     const cmd = splittedMsg[1];
 
                     if(mention === botName.toLowerCase()){ // if mentioned and has a command with colon
-                        const cmdFound = false;
+                        let cmdFound = false;
                         console.log('bot mentioned');
                         commands.forEach(command => {
                             if (cmd.indexOf(command) > -1) {
